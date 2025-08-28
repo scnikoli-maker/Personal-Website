@@ -1,0 +1,29 @@
+/* nikolic.site_themes.css */
+
+
+
+.text-font
+.cutive-mono-regular {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title-font {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.heading-1,
+.heading-2 {
+  color: #A47A02;
+}
+
+.text-1 {
+  color: #FAEFB9;
+}
+
+.site-backtround {
+  color: #080600
+}

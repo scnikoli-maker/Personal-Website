@@ -1,0 +1,26 @@
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  padding: 2rem;
+}
+
+header, main, footer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  font-family: var(--font-serif);
+  color: var(--highlight);
+}
+
+nav a {
+  margin-right: 1rem;
+  color: var(--link);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

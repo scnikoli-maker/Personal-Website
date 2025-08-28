@@ -1,0 +1,25 @@
+:root {
+  --accent-gold: #A47A02;
+  --accent-deep-gold: #BC962C;
+  --accent-copper: #7A5B01;
+  --accent-plum: #4C1F30;
+  --accent-ink: #2D003D;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --bg: #FAEFB9;
+  --text: #130E00;
+  --panel: #E6D594;
+  --border: #CFB461;
+  --link: var(--accent-plum);
+  --highlight: var(--accent-deep-gold);
+}
+
+.site-background {
+  background-color: var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

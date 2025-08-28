@@ -1,0 +1,16 @@
+[data-theme="dark"] {
+  --bg: #080600;
+  --text: #E6D594;
+  --panel: #201800;
+  --border: #3E2E00;
+  --link: var(--accent-gold);
+  --highlight: var(--accent-copper);
+}
+
+[data-theme="dark"] .site-background {
+  background-color: var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

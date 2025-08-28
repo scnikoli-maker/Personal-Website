@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.site-background {
+  background-color: var(--background);
+  position: fixed;
+  inset: 0;               /* fills the viewport */
+  z-index: -1;            /* behind content */
+}
+
+.header {
+  padding: 20px;
+  background-color: var(--panel);
+  border-bottom: 2px solid var(--border);
+}
+
+.nav-bar {
+  margin-top: 12px;
+}
+
+.nav-bar a {
+  margin-right: 16px;
+  text-decoration: none;
+  color: var(--link);
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: var(--highlight);
+}
+
+.heading-primary,
+.h-1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.heading-secondary,
+.h-2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--accent-copper);
+  margin-top: 1em;
+}
+
+.paragraph,
+.p {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: .66rem;
+  line-height: .5;
+  color: var(--text-color);
+}
+
+
+.project-list {
+  padding-left: 24px;
+  list-style: disc;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  background-color: var(--panel);
+  border-top: 2px solid var(--border);
+  font-size: 0.9rem;
+}
+
+/* ========== HEADER & TITLE ========== */
+/* ===== Header layout (single source of truth) ===== */
+
+.header-wrap {
+  background-color: var(--background);
+}
+
+/* 1) Grid: first column equals the OUTER frame size (photo + ring*2) */
+.title-row {
+  max-width: 1200px;
+  margin: 24px auto 12px;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* 200px = outer frame width below */
+  gap: 0;                            /* bar will "touch" the ring */
+  align-items: start;
+  padding: 0 16px;
+}
+
+.title-text {
+  /* big, embossed, gold title */
+  font-size: clamp(44px, 6vw, 92px);
+  margin-left: 14px;   /* <- scooch right; try 12–20px */
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--accent-gold);
+  text-shadow:
+     0 1px 0 rgba(0,0,0,.35),
+     0 2px 0 rgba(0,0,0,.3),
+     0 3px 0 rgba(0,0,0,.25),
+     0 4px 8px rgba(0,0,0,.45),
+     0 0 18px rgba(188,150,44,.35);
+}
+
+/* 2) Avatar sizes (one place to change) */
+.avatar-frame {
+  /* FINAL SIZES — change these numbers if you want it bigger/smaller */
+  /* Inner photo = 180×220, ring = 10px → outer = (180+20)×(220+20) = 200×240 */
+  width: 200px;
+  height: 240px;
+                    /* ring thickness */
+
+  /* Gradient ring: solid and reliable across browsers */
+  background: var(--frame-gradient) border-box, var(--background) padding-box;
+  border: 6px solid transparent;
+  background-clip: border-box, padding-box;
+
+  border-radius: 9999px;              /* oval */
+  display: grid;
+  place-items: center;
+
+  position: relative;                 /* ensure ring sits above bar edge */
+  z-index: 2;
+}
+
+/* Inner mask keeps the image from covering the ring */
+.avatar-mask {
+  width: 180px;
+  height: 220px;
+  background: var(--background);
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;           /* nudge face up a bit; tweak if needed */
+  border-radius: inherit;
+}
+
+/* 3) Gradient bar: “kiss” the ring without overlapping it */
+.title-gradient {
+  height: 16px;
+  background: var(--title-gradient);
+  border-radius: 0;                    /* perfectly flush to ring */
+  box-shadow: 0 1px 0 rgba(0,0,0,.4) inset, 0 2px 10px rgba(0,0,0,.45);
+
+  /* Touch the ring: pull left by the ring thickness (10px) */
+  margin-left: -10px;
+  width: calc(100% + 10px);
+  z-index: 1;                          /* stays under the ring edge */
+}
+
+
+/* ========== NAV GRID (boxed/dotted) ========== */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.nav-item {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 44px;
+  text-decoration: none;
+  color: var(--link);
+  font-size: 0.95rem;
+  background-color: transparent;
+  transition: transform .08s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.nav-item span {
+  opacity: .85;
+}
+
+.nav-item:hover {
+  transform: translateY(-1px);
+  background-color: rgba(255,255,255,0.03);
+  color: var(--link);
+  border-color: var(--link);
+}
+
+/* ========== HERO TEXT ========== */
+.hero-block {
+  max-width: 1200px;
+  margin: 56px auto 48px;
+  padding: 0 16px;
+}
+
+.hero-intro {
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.35;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  text-align: left; /* set to center if you want */
+  margin-bottom: 36px;
+}
+
+.hero-tagline {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.35;
+  opacity: .9;
+  color: var(--text);
+  text-align: center; /* set to center if you want */
+}
+
+/* ========== SECTIONS (carry current structure forward) ========== */
+.main { max-width: 1200px; margin: 0 auto 64px; padding: 0 16px; }
+
+
+.heading-secondary { 
+  font-size: 1.75rem; 
+  color: var(--accent-copper); 
+  margin: 24px 0 6px; 
+}
+
+
+
+.project-list { padding-left: 24px; list-style: disc; }

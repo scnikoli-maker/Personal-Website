@@ -1,0 +1,55 @@
+:root {
+  --accent-gold: #A47A02;
+  --accent-deep-gold: #BC962C;
+  --accent-copper: #7A5B01;
+  --accent-red-copper: #5A2E28;
+  --accent-plum: #4C1F30;
+  --accent-ink: #2D003D;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --background: #080600;
+  --text: #E6D594;
+  --panel: #201800;
+  --border: #3E2E00;
+  --link: var(--accent-plum);
+  --highlight: var(--accent-red-copper);
+  /* gradient under the title: gold on LEFT -> plum -> ink */
+  --title-gradient: linear-gradient(90deg, var(--accent-gold), var(--accent-plum), var(--accent-ink));
+
+  /* frame border: opposite of bar — gold on RIGHT */
+  --frame-gradient: linear-gradient(90deg, var(--accent-ink), var(--accent-plum), var(--accent-gold));
+}
+
+.site-background {
+  background-color: var(--background);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.text-font,
+.heading-secondary
+.cutive-mono-regular {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title-font {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.heading-1,
+.heading-2 {
+  color: var(--accent-gold);
+}
+
+.paragraph {
+  color: var(--text);
+}
+

@@ -1,0 +1,26 @@
+:root {
+  --accent-gold: #A47A02;
+  --accent-deep-gold: #BC962C;
+  --accent-copper: #7A5B01;
+  --accent-plum: #4C1F30;
+  --accent-ink: #2D003D;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --bg: #FAEFB9;
+  --text: #130E00;
+  --panel: #E6D594;
+  --border: #CFB461;
+  --link: var(--accent-plum);
+  --highlight: var(--accent-deep-gold);
+}
+
+[data-theme="dark"] {
+  --bg: #080600;
+  --text: #E6D594;
+  --panel: #201800;
+  --border: #3E2E00;
+  --link: var(--accent-gold);
+  --highlight: var(--accent-copper);
+}
